@@ -14,7 +14,7 @@ class bootcamp {
         this.students = students;
     }
     registerStudent(student) {
-        if (this.students.filter(s => s.email === student.email)){
+        if (this.students.filter(s => s.email === student.email).length){
             console.log('this student ${student.email} is registered already');
         } else {
             this.students.push(student);
@@ -24,6 +24,6 @@ class bootcamp {
     }
 }
 
-// testing to upload with to gethub from Visual Studio Code
+// testing to upload with to gethub from Visual Studio Codes
 
 
