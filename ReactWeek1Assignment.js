@@ -15,7 +15,7 @@ class bootcamp {
     }
     registerStudent(student) {
         if (this.students.filter(s => s.email === student.email)){
-            console.log('the student ${student.email} is already registered!');
+            console.log('this student ${student.email} is registered already');
         } else {
             this.students.push(student);
             console.log('Registering ${student.email} to the bootcamp ${this.name}.');
@@ -25,6 +25,4 @@ class bootcamp {
 }
 
 
-
-// const registerStudent = bootcamp.filter(name=> name[0] === 'K');
 
