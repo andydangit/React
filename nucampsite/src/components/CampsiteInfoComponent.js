@@ -17,6 +17,7 @@ class CampsiteInfo extends Component {
         )
     }
 
+    //call comment from campsites.js
     renderComments(comments){
         if(comments){
             return(
@@ -34,6 +35,7 @@ class CampsiteInfo extends Component {
 
     }
 
+    //show information on site
     render () {
         if(this.props.campsite){
            return <div className="row">
