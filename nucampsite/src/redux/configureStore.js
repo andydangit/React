@@ -1,20 +1,18 @@
-import { createStore, CombineReducers } from 'redux';
+import {createStore, combineReducers} from 'redux';
 import { Campsites } from './campsites';
-import { Comment } from './comments';
+import { Comments } from './comments';
 import { Partners } from './partners';
 import { Promotions } from './promotions';
 
-
-
 export const ConfigureStore = () => {
     const store = createStore(
-        CombineReducers({
+        combineReducers({
             campsites: Campsites,
-            comments: Comment,
+            comments: Comments,
             partners: Partners,
-            Promotions: Promotions
+            promotions: Promotions
         })
     );
 
     return store;
-};
+}
