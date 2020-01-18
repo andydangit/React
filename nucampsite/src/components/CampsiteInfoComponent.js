@@ -26,7 +26,7 @@ const minLength = len => val => val && (val.length >= len);
     }
 
     //call comment from campsites.js
-    function RenderComments({comments}){
+    function RenderComments({comments, addComment, campsiteID}){
         if(comments){
             return(
                 <div className="col-md-5 m-1">
@@ -37,7 +37,7 @@ const minLength = len => val => val && (val.length >= len);
                         -- {comment.author} {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
                         <hr />
                         </div>)}
-                        <CommentForm />
+                        <CommentForm  campsiteID={campsiteID} addComment={addComment} />
                 </div>
             );
         };
@@ -62,8 +62,8 @@ const minLength = len => val => val && (val.length >= len);
 
         
         handleSubmit(values) {
-            console.log("Current state is: " + JSON.stringify(values));
-            alert("Current state is: " + JSON.stringify(values));
+            this.toggleModal();
+            this.props.addComment(this.props.campsiteID, values.rating, values.author, values.text);
         }
         
         toggleModal() {
@@ -153,7 +153,11 @@ const minLength = len => val => val && (val.length >= len);
             </div>
                     <div className="row">
                         <RenderCampsite campsite={props.campsite} />
-                        <RenderComments comments={props.comments} />
+                        <RenderComments 
+                            comments={props.comments} 
+                            addComment={props.addComment}
+                            campsiteID={props.campsite.id}
+                        />
                     </div> 
                 </div> 
            );
