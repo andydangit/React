@@ -24,7 +24,8 @@
     "redux-logger": "3.0.6",
     "redux-thunk": "2.2.0",
     "typeface-lobster": "^0.0.72",
-    "typeface-open-sans": "^0.0.75"
+    "typeface-open-sans": "^0.0.75",
+    "yarn": "^1.21.1"
   },
   "scripts": {
     "start": "react-scripts start",
